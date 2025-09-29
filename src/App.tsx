@@ -1,19 +1,29 @@
-import { BrowserRouter, Route, Routes } from "react-router"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import LayoutPage from "./pages/LayoutPage"
 import Home from "./pages/Home"
 import AboutUs from "./pages/aboutUs"
 import Blog from "./pages/Blog"
+import Projects from "./pages/Projects"
+import Vision from "./pages/Vision"
 // import LayoutPage from "./pages/LayoutPage"
 
 function App() {
   return (
-    <BrowserRouter> //This is only can have only one for a app
+    // This is only can have only one for a app
+    <BrowserRouter> 
       <Routes>
-        <Route path="/" element={<LayoutPage/>}> //Nested Routing
-          <Route index element={<Home/>} />      // Child Routings x2
+        {/* //Nested Layout Routing */}
+        <Route path="/" element={<LayoutPage/>}>
+        {/* // Child Routings x2 */}
+          <Route index element={<Home/>} />
           <Route path="about" element={<AboutUs/>} />
         </Route>
-        <Route path="/blog" element={<Blog/>} /> //Parent Route
+        {/* //Parent Route */}
+        <Route path="/blog" element={<Blog/>} />
+        {/* Nested Routing */}
+        <Route path="projects" element={<Projects />}>
+          <Route path="vision"element={<Vision />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
