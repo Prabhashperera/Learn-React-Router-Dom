@@ -7,13 +7,13 @@ import Blog from "./pages/Blog"
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> //This is only can have only one for a app
       <Routes>
-        <Route path="/" element={<LayoutPage/>}>
-          <Route index element={<Home/>} />
+        <Route path="/" element={<LayoutPage/>}> //Nested Routing
+          <Route index element={<Home/>} />      // Child Routings x2
           <Route path="about" element={<AboutUs/>} />
         </Route>
-        <Route path="/blog" element={<Blog/>} />
+        <Route path="/blog" element={<Blog/>} /> //Parent Route
       </Routes>
     </BrowserRouter>
   )
