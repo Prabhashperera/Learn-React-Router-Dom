@@ -21,7 +21,7 @@ function App() {
         {/* //Parent Route */}
         <Route path="/blog" element={<Blog/>} />
         {/* Nested Routing */}
-        <Route path="projects" element={<Projects />}>
+        <Route path="/projects" element={<Projects />}>
           <Route path="vision"element={<Vision />} />
         </Route>
       </Routes>
